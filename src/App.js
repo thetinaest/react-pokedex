@@ -21,9 +21,7 @@ function App() {
     fetch(`https://pokeapi.co/api/v2/pokemon/${searchTerm}`)
       .then(res => res.json())
       .then(json => setPokemon(json))
-      .catch(err => setError('Pokemon not found'),
-      setPokemon(null),
-      setSearchTerm(''))
+      .catch(err => setError('Pokemon not found'))
       .finally(() => setLoading(false))
   }
 
